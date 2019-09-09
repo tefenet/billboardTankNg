@@ -1,4 +1,2 @@
-# Angular Login
-
-Simple angular login ready to use.
+# Angular Login for fuelMC system
 
