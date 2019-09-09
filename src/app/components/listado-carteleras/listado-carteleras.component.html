@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+
+<table class="table table-striped">
+  <thead class="black white-text">
+    <tr>
+      <th>Nombre</th>
+      <th>capacidad</th>
+      <th>volumen actual</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let t of tanks">
+      <td>
+        {{ t.name }}
+      </td>
+      <td>
+        {{ t.capacity }}
+      </td>
+      <td *ngIf="t.content; else linea">
+        {{ t.content }}
+      </td>
+      <ng-template #linea>
+        <td>
+          -
+        </td>
+      </ng-template>
+      <button type="button" class="btn btn-primary">edit</button>
+      <button type="button" class="btn btn-danger" tooltip="esta accion no puede deshacerse"
+        (click)="borrar(t)">delete</button>
+      <button type="button" class="btn btn-primary">cargas</button>
+      <button type="button" class="btn btn-primary">historial</button>
+    </tr>
+  </tbody>
+</table>
